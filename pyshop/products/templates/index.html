@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block products_content %}
+    <h1>Products</h1>
+    <div class="container">
+        <div class="row">
+        {% for product in products %}
+         <div class="col-md-4" style="min-height: 400px; max-height: 400px">
+            <div class="card" >
+                <div class="card-img-top">
+                    <img src={{ product.image_url }} height="auto" width="100%" alt="">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        {{ product.name }}
+                    </div>
+                    <div class="card-text">
+                       Price: {{ product.price }}
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
