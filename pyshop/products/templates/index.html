@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block products_content %}
-    <header class="py-3 bg-primary text-white">
-        <h1 class="text-center">Products</h1>
-    </header>
-    <div class="container">
-        <div class="row">
+
+<div class="container">
+    <div class="row">
         {% for product in products %}
-         <div class="col-md-4 mt-5">
-            <div class="card" >
+        <div class="col-md-4 mt-5">
+            <div class="card">
                 <div class="card-img-top">
                     <img src="{{ product.image_url }}" height="auto" width="100%" alt="">
 
@@ -18,7 +16,7 @@
                         {{ product.name }}
                     </div>
                     <div class="card-text">
-                       Price: ${{ product.price }}
+                        Price: ${{ product.price }}
                     </div>
                 </div>
                 <div class="card-footer">
@@ -28,5 +26,5 @@
         </div>
         {% endfor %}
     </div>
-    </div>
+</div>
 {% endblock %}
